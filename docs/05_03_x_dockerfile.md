@@ -5,7 +5,7 @@
 !SUB
 # Dockerfile
 
-build-dockerfile/Dockerfile`
+**build-dockerfile/Dockerfile**
 ```dockerfile
 FROM mjvdende/python
 
@@ -47,7 +47,9 @@ $ docker run -d -p 5000:5000 -e FLASK_APP=helloWorld.py python-hello-world:1 fla
 
 !SUB
 ## Enhanced Dockerfile
-`build-dockerfile-v2/Dockerfile`
+
+**build-dockerfile-v2/Dockerfile**
+
 ```dockerfile
 FROM mjvdende/python
 
@@ -93,14 +95,13 @@ docker images | grep python-hello-world
 > python-hello-world latest d31a90b28d50 2 minutes ago 57.82 MB
 ```
 
-Get rid of the build **tools** <!-- .element: class="fragment" -->
-
-We don't need/want them during run-time <!-- .element: class="fragment" -->
+Get rid of the build tools <!-- .element: class="fragment" --> <br />
+We don't need/want them during run-time
 
 !SUB
 # Getting rid of tools in our image
 
-build-dockerfile-v3/Dockerfile
+**build-dockerfile-v3/Dockerfile**
 
 ```dockerfile
 FROM alpine
