@@ -5,36 +5,35 @@
 !SUB
 # Dockerfile
 
-go-hello-world-http-v1/Dockerfile`
+build-dockerfile/Dockerfile`
 ```dockerfile
-FROM golang
+FROM mjvdende/python
 
-RUN go get github.com/simonvanderveldt/go-hello-world-http
+RUN wget --no-check-certificate https://raw.githubusercontent.com/xebia/twc-cd-with-docker/master/build/helloWorld.py
 ```
 
 !SUB
 # Build and run the image
 ```bash
-$ docker build -t go-hello-world-http go-hello-world-http-v1
+$ docker build -t python-hello-world:1 build-dockerfile-v1
 Sending build context to Docker daemon 2.048 kB
-Step 1 : FROM golang
+Step 1 : FROM mjvdende/python
  ---> 002b233310bb
-Step 2 : RUN go get github.com/simonvanderveldt/go-hello-world-http
+Step 2 : RUN wget --no-check-certificate https://raw.githubusercontent.com/xebia/twc-cd-with-docker/master/build/helloWorld.py
  ---> Running in 1c4e7bf0833e
  ---> 8db642e96eed
 Removing intermediate container 1c4e7bf0833e
 Successfully built 8db642e96eed
 
 # See what happened in each layer that our image exists of
-$ docker history go-hello-world-http
+$ docker history python-hello-world:1
 IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-91a8a211556f        13 minutes ago      /bin/sh -c #(nop)  EXPOSE 80/tcp                0 B
-de2c1fef8d39        51 minutes ago      /bin/sh -c #(nop)  CMD ["/bin/sh" "-c" "/go/b   0 B
-8db642e96eed        55 minutes ago      /bin/sh -c go get github.com/simonvanderveldt   5.708 MB
-002b233310bb        12 days ago         /bin/sh -c #(nop)  COPY file:f6191f2c86edc9343  2.478 kB
-<missing>           12 days ago         /bin/sh -c #(nop)  WORKDIR /go                  0 B
+6fd6432eede5        30 seconds ago      /bin/sh -c wget --no-check-certificate https:   289 B
+3189826efed6        About an hour ago   /bin/sh -c #(nop)  CMD ["bash"]                 0 B
+62eeacc844be        20 hours ago        /bin/sh -c apk add --no-cache python py-pip w   53.02 MB
+ee4603260daa        9 days ago          /bin/sh -c #(nop) ADD file:d6ee3ba7a4d59b1619   4.803 MB
 
-$ docker run -d -p 80:80 go-hello-world-http /go/bin/go-hello-world-http
+$ docker run -d -p 5000:5000 -e FLASK_APP=helloWorld.py python-hello-world:1 flask run --host=0.0.0.0
 8ce667efcb4b2d785b4805987b798130998d65e4c75daa7a60b354e04b314005
 ```
 
