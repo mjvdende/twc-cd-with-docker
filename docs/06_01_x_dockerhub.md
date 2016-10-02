@@ -9,5 +9,5 @@ Create a Docker Hub account at https://hub.docker.com
 
 ```
 docker login
-docker push <DOCKER HUB USERNAME>/go-hello-world-http-v2
+docker push <DOCKER HUB USERNAME>/python-hello-world:3
 ```
