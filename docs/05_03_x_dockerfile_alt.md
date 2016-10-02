@@ -38,45 +38,45 @@ $ docker run -d -p 5000:5000 -e FLASK_APP=helloWorld.py python-hello-world:1 fla
 ```
 
 !SUB
-# Check
-What have we done thus far?
+# Check. What have we done thus far?
 
-What can we improve?
-- Automatically start our application when we run the container <!-- .element: class="fragment" -->
-- Declare on which port our application runs <!-- .element: class="fragment" -->
+**What can we improve?**
+
+- Automatically start our application when we run the container
+- Declare on which port our application runs
 
 !SUB
 ## Enhanced Dockerfile
-`go-hello-world-http-v2/Dockerfile`
+`build-dockerfile-v2/Dockerfile`
 ```dockerfile
-FROM golang
+FROM mjvdende/python
 
-RUN go get github.com/simonvanderveldt/go-hello-world-http
-
-CMD /go/bin/go-hello-world-http
-EXPOSE 80
+RUN wget --no-check-certificate https://raw.githubusercontent.com/xebia/twc-cd-with-docker/master/build/helloWorld.py
+ENV FLASK_APP helloWorld.py
+CMD ["flask", "run", "--host=0.0.0.0"]
+EXPOSE 5000
 ```
 
 !SUB
 # Build and run the enhanced image
 ```
-$ docker build -t go-hello-world-http go-hello-world-http-v2
+$ docker build -t python-hello-world:2 build-dockerfile-v2
 Sending build context to Docker daemon 2.048 kB
-Step 1 : FROM golang
+Step 1 : FROM mjvdende/python
  ---> 002b233310bb
-Step 2 : RUN go get github.com/simonvanderveldt/go-hello-world-http
+Step 2 : RUN wget --no-check-certificate https://raw.githubusercontent.com/xebia/twc-cd-with-docker/master/build/helloWorld.py
  ---> Using cache
  ---> 8db642e96eed
-Step 3 : CMD /go/bin/go-hello-world-http
+Step 3 : CMD flask run --host=0.0.0.0
  ---> Running in 804dd7261841
  ---> de2c1fef8d39
-Step 4 : EXPOSE 80
+Step 4 : EXPOSE 5000
  ---> Running in 20a26363a989
  ---> 91a8a211556f
 Removing intermediate container 20a26363a989
 Successfully built 91a8a211556f
 
-$ docker run -d -P go-hello-world-http-v2
+$ docker run -d -P python-hello-world:2
 3f0b7f4f2a92d7165a832c23f2bf3a1b675f18c4ac6c2a4b1e6ccefed310237f
 
 $ docker ps
@@ -85,81 +85,50 @@ cc245603ef5c        go-hello-world-http-v2  "/bin/sh -c /go/bin/g"   3 seconds a
 ```
 
 !SUB
-# Check
-What have we done thus far?
+# Check. What have we done thus far?
 
-What can we improve?
+**What can we improve?**
 ```
-docker images | grep go-hello-world-http-v2
-> go-hello-world-http-v2 latest d31a90b28d50 2 minutes ago 675.3 MB
+docker images | grep python-hello-world
+> python-hello-world latest d31a90b28d50 2 minutes ago 57.82 MB
 ```
-<!-- .element: class="fragment" -->
-Get rid of the build tools.
-<br>We don't need/want them during run-time <!-- .element: class="fragment" -->
+
+Get rid of the build **tools** <!-- .element: class="fragment" -->
+
+We don't need/want them during run-time <!-- .element: class="fragment" -->
 
 !SUB
-# Getting rid of build tools in our image
-Solution: <span class="fragment">2 images</span>
-- Builder <!-- .element: class="fragment" -->
-- Application <!-- .element: class="fragment" -->
+# Getting rid of tools in our image
 
-!SUB
-## Builder image
-`builder/Dockerfile`
+build-dockerfile-v3/Dockerfile
+
 ```dockerfile
-FROM golang
+FROM alpine
 
-ENTRYPOINT ["go", "build"]
+RUN apk add --no-cache python py-pip \
+ && pip install flask \
+ && rm -rf /var/cache/apk/*
 
-CMD ["."]
-```
+COPY helloWorld.py
+ENV FLASK_APP helloWorld.py
+CMD ["flask", "run", "--host=0.0.0.0"]
 
-```bash
-$ build -t builder builder
-...
-Successfully built 0dede3ca803b
-```
-
-!SUB
-# Build the application using the builder image
-```bash
-# Get the sources
-$ git clone https://github.com/simonvanderveldt/go-hello-world-http go-hello-world-http-v3/go-hello-world-http
-Cloning into '/Users/simon/go-hello-world-http'...
-...
-
-# Build the application using the builder image
-$ cd go-hello-world-http-v3
-$ docker run --rm --volume $(pwd)/go-hello-world-http:/go/src/go-hello-world-http --volume $(pwd)/build:/go builder go-hello-world-http
-
-# We now have a built application
-$ ls -hl build/go-hello-world-http
--rwxr-xr-x  1 simon  staff   5.4M Sep 20 22:13 build/go-hello-world-http
-```
-
-!SUB
-# Application image
-`go-hello-world-http-v3/Dockerfile`
-```dockerfile
-FROM debian
-
-COPY build/go-hello-world-http /go-hello-world-http
-
-CMD /go-hello-world-http
-EXPOSE 80
+EXPOSE 5000
 ```
 
 ```bash
 # Build the application image
-docker build -t go-hello-world-http-v3 .
+docker build -t python-hello-world:3 build-dockerfile-v3
 
 # Run the application image
-docker run -d -p 80:80 go-hello-world-http-v3
+docker run -d -p 5000:5000 python-hello-world-v3
 ```
 
 !SUB
 # Result
 ```bash
-docker images | grep hello-world-http-v3
-> go-hello-world-http-v2  latest  5db0534216f3  58 seconds ago  130.8 MB
+docker images | grep python-hello-world
+python-hello-world      3                   265076e1f41a        7 minutes ago       56.63 MB
+python-hello-world      2                   aa947478b7a1        3 minutes ago       57.82 MB
+python-hello-world      1                   6fd6432eede5        46 minutes ago      57.82 MB
 ```

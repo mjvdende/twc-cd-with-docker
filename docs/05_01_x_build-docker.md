@@ -5,15 +5,15 @@
 !SUB
 # Build the application
 ```bash
-$ docker run -ti golang bash
-root@1cb333018404:/go#
+$ docker run -ti mjvdende/python
+bash-4.3#
 # Now we're inside the container!
 
 # Build the application
-root@1cb333018404:/go# go get github.com/simonvanderveldt/go-hello-world-http
+bash-4.3# wget --no-check-certificate https://raw.githubusercontent.com/xebia/twc-cd-with-docker/master/build/helloWorld.py
 
 # Exit the container
-root@1cb333018404:/go# exit
+bash-4.3# exit
 # Now we're outside the container again
 ```
 
@@ -22,56 +22,51 @@ root@1cb333018404:/go# exit
 ```bash
 # Show the last container that was created
 $ docker ps -l
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
-1cb333018404        golang              "bash"              3 minutes ago       Exited (0) 13 seconds ago                       clever_fermi
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                       PORTS               NAMES
+ec05e076eae1        mjvdende/python     "bash"              3 minutes ago       Exited (130) 5 seconds ago                       silly_tesla
 
 # Show our changes
 $ docker diff <CONTAINER ID>
-C /go
-C /go/bin
-A /go/bin/go-hello-world-http
-C /go/src
-A /go/src/github.com
-A /go/src/github.com/simonvanderveldt
-A /go/src/github.com/simonvanderveldt/go-hello-world-http
-A /go/src/github.com/simonvanderveldt/go-hello-world-http/.git
-...
+A /helloWorld.py
+C /root
+A /root/.bash_history
+A /root/.wget-hsts
 ```
 
 !SUB
 # Create the image
 ```bash
 # Now create an image from our container
-$ docker commit <CONTAINER ID> go-hello-world-http
-sha256:34d091010050c9e94de643af60b4196dc132ad6f20825d779ab70bccf1f732b0
+$ docker commit <CONTAINER ID> python-hello-world
+sha256:60e7adf22eb516fd9d42c6624e819d559bc9625f5b2579f9e5d02fa51af06681
 
 # Verify the image was created
 $ docker images
-REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
-go-hello-world-http                  latest              34d091010050        14 seconds ago      675.4 MB
+REPOSITORY                          TAG                 IMAGE ID            CREATED             SIZE
+python-hello-world                  latest              60e7adf22eb5        37 seconds ago      57.85 MB
 
 # See what happened in each layer that our image exists of
-$ docker history go-hello-world-http
-IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-62484befa0e3        10 seconds ago      bash                                            5.708 MB
-002b233310bb        12 days ago         /bin/sh -c #(nop) COPY file:f6191f2c86edc9343   2.478 kB
-<missing>           12 days ago         /bin/sh -c #(nop)  WORKDIR /go                  0 B
-<missing>           12 days ago         /bin/sh -c mkdir -p "$GOPATH/src" "$GOPATH/bi   0 B
+$ docker history python-hello-world
+IMAGE               CREATED              CREATED BY                                      SIZE                COMMENT
+60e7adf22eb5        About a minute ago   bash                                            33.52 kB            
+eb20866c1084        11 minutes ago       /bin/sh -c #(nop)  CMD ["bash"]                 0 B                 
+<missing>           11 minutes ago       /bin/sh -c apk add --no-cache python py-pip w   53.02 MB            
+<missing>           9 days ago           /bin/sh -c #(nop) ADD file:d6ee3ba7a4d59b1619   4.803 MB
 ...
 ```
 
 !SUB
 # Create a container from the image
 ```bash
-$ docker run -d -p 80:80 go-hello-world-http /go/bin/go-hello-world-http
+$ docker run -d -p 5000:5000 -e FLASK_APP=helloWorld.py python-hello-world flask run --host=0.0.0.0
 
 # Check that the container is running
 $ docker ps
-CONTAINER ID        IMAGE                 COMMAND                  CREATED              STATUS              PORTS                NAMES
-491462e89e35        go-hello-world-http   "/go/bin/go-hello-wor"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp   admiring_spence
+CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS              PORTS                    NAMES
+f69695235a11        python-hello-world   "flask run --host=0.0"   2 minutes ago       Up 2 minutes        0.0.0.0:5000->5000/tcp   drunk_bhabha
 
 # Check if the application works
-$ curl localhost
+$ curl localhost:5000
 > Hello, world!
 ```
 
@@ -93,8 +88,8 @@ Stopped containers are not automatically removed!
 ```bash
 # Check that the container actually still exists
 $ docker ps -a
-CONTAINER ID        IMAGE                 COMMAND                  CREATED              STATUS              PORTS                NAMES
-491462e89e35        go-hello-world-http   "/go/bin/go-hello-wor"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp   admiring_spence
+CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS                       PORTS               NAMES
+f69695235a11        python-hello-world   "flask run --host=0.0"   3 minutes ago       Exited (137) 5 seconds ago                       drunk_bhabha
 
 # Remove the container
 $ docker rm <CONTAINER ID>
@@ -109,4 +104,4 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 What have we done thus far?
 
 What can we improve?
-- Automate the steps to build the image <!-- .element: class="fragment" -->
+- Automate the steps to build the image 

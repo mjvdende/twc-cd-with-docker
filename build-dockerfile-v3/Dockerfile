@@ -1,3 +1,11 @@
-FROM mjvdende/python
+FROM alpine
 
-RUN wget --no-check-certificate https://raw.githubusercontent.com/xebia/twc-cd-with-docker/master/build/helloWorld.py
+RUN apk add --no-cache python py-pip \
+ && pip install flask \
+ && rm -rf /var/cache/apk/*
+
+COPY helloWorld.py helloWorld.py
+ENV FLASK_APP helloWorld.py
+CMD ["flask", "run", "--host=0.0.0.0"]
+
+EXPOSE 5000

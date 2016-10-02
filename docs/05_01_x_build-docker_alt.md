@@ -104,4 +104,4 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 What have we done thus far?
 
 What can we improve?
-- Automate the steps to build the image <!-- .element: class="fragment" -->
+- Automate the steps to build the image 
