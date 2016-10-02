@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Continuous Delivery with Docker</title>
+		<meta name="description" content="">
+		<meta name="author" content="Xebia">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/qtcreator_dark.css">
+		<link rel="icon" type="image/png" href="img/xebia-favicon.png" sizes="32x32">
+		<!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+	      <section data-markdown="01_introduction.md"
+	              data-separator="^\n!SLIDE"
+	              data-separator-vertical="^\n!SUB"
+	              data-separator-notes="^\n!NOTE">
+	      </section>
+	      <section data-markdown="02_cd.md"
+	              data-separator="^\n!SLIDE"
+	              data-separator-vertical="^\n!SUB"
+	              data-separator-notes="^\n!NOTE">
+	      </section>
+				<section data-markdown="03_cd-with-docker.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+	      <section data-markdown="04_00_docker.md"
+	              data-separator="^\n!SLIDE"
+	              data-separator-vertical="^\n!SUB"
+	              data-separator-notes="^\n!NOTE">
+	      </section>
+				<section data-markdown="04_01_x_prep.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+				<section data-markdown="04_02_x_docker.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+	      <section data-markdown="05_00_build.md"
+	              data-separator="^\n!SLIDE"
+	              data-separator-vertical="^\n!SUB"
+	              data-separator-notes="^\n!NOTE">
+	      </section>
+				<section data-markdown="05_00_build-image-layers.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+				<section data-markdown="05_01_x_build-docker.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+				<section data-markdown="05_02_dockerfile.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+				<section data-markdown="05_03_x_dockerfile.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+				<section data-markdown="06_00_deploy.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+				<section data-markdown="06_01_x_dockerhub.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+				<section data-markdown="07_test.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+				<section data-markdown="08_deploy-production.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+				<section data-markdown="09_extra.md"
+								data-separator="^\n!SLIDE"
+								data-separator-vertical="^\n!SUB"
+								data-separator-notes="^\n!NOTE">
+				</section>
+			</div>
+		</div>
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				theme: Reveal.getQueryHash().theme,
+				transition: Reveal.getQueryHash().transition || 'slide',
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>
