@@ -5,7 +5,7 @@ DOCKER_VM_IP=[IP]
 docker build -t $DOCKER_HUB_USERNAME/python-hello-world build-dockerfile-v3
 docker push $DOCKER_HUB_USERNAME/python-hello-world
 
-ssh core@$DOCKER_VM_IP << EOF
+ssh -i ssh-key core@$DOCKER_VM_IP << EOF
 docker pull $DOCKER_HUB_USERNAME/python-hello-world
 docker stop hello-world || true
 docker rm hello-world || true
