@@ -1,5 +1,3 @@
-# CD-with-Docker
+# Workshop Continuous Delivery with Docker
 
-Workshop Continuous Delivery with Docker
-
-See http://nauts.io/cd-with-docker/ for the slides
+See http://xebia.github.io/twc-cd-with-docker/ for the slides
