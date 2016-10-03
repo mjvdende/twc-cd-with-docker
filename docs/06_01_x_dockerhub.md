@@ -1,6 +1,6 @@
 <!-- .slide: data-background="#64217E" -->
 <center>
-# ![exercise](img/sprocket.png) <!-- .element: style="width: 10%; height: auto;" class="noborder" --> Exercise: Publish Docker Image
+# ![exercise](img/sprocket.png) <!-- .element: style="width: 10%; height: auto;" class="noborder" --> Exercise: Development Workflow
 
 !SUB
 # Push your image to the Docker Hub
