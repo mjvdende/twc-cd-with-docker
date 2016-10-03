@@ -38,6 +38,8 @@ ee4603260daa        9 days ago          /bin/sh -c #(nop) ADD file:d6ee3ba7a4d59
 
 $ docker run -d -p 5000:5000 -e FLASK_APP=helloWorld.py python-hello-world:1 flask run --host=0.0.0.0
 8ce667efcb4b2d785b4805987b798130998d65e4c75daa7a60b354e04b314005
+
+$ docker stop 8ce
 ```
 
 !SUB
@@ -64,7 +66,7 @@ EXPOSE 5000
 
 !SUB
 # Build and run the enhanced image
-```
+```bash
 $ docker build -t python-hello-world:2 build-dockerfile-v2
 Sending build context to Docker daemon 2.048 kB
 Step 1 : FROM mjvdende/python
@@ -93,7 +95,7 @@ cc245603ef5c        go-hello-world-http-v2  "/bin/sh -c /go/bin/g"   3 seconds a
 # Check. What have we done thus far?
 
 **What can we improve?**
-```
+```bash
 docker images | grep python-hello-world
 > python-hello-world latest d31a90b28d50 2 minutes ago 57.82 MB
 ```
