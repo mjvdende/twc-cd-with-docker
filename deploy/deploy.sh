@@ -2,7 +2,7 @@
 DOCKER_HUB_USERNAME=mjvdende
 DOCKER_VM_IP=104.199.25.253
 
-docker build -t $DOCKER_HUB_USERNAME/python-hello-world .
+docker build -t $DOCKER_HUB_USERNAME/python-hello-world build-dockerfile-v3
 docker push $DOCKER_HUB_USERNAME/python-hello-world
 
 ssh core@$DOCKER_VM_IP << EOF
