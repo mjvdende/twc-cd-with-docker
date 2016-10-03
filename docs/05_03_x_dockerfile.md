@@ -47,8 +47,8 @@ $ docker stop 8ce
 
 **What can we improve?**
 
-- Automatically start our application when we run the container
-- Declare on which port our application runs
+- Automatically start our application when we run the container <!-- .element: class="fragment" -->
+- Declare on which port our application runs <!-- .element: class="fragment" -->
 
 !SUB
 ## Enhanced Dockerfile
@@ -128,13 +128,4 @@ docker build -t python-hello-world:3 build-dockerfile-v3
 
 # Run the application image
 docker run -d -p 5000:5000 python-hello-world-v3
-```
-
-!SUB
-# Result
-```bash
-docker images | grep python-hello-world
-python-hello-world      3                   265076e1f41a        7 minutes ago       56.63 MB
-python-hello-world      2                   aa947478b7a1        3 minutes ago       57.82 MB
-python-hello-world      1                   6fd6432eede5        46 minutes ago      57.82 MB
 ```
