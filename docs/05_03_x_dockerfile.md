@@ -127,5 +127,5 @@ EXPOSE 5000
 docker build -t python-hello-world:3 build-dockerfile-v3
 
 # Run the application image
-docker run -d -p 5000:5000 python-hello-world-v3
+docker run -d -p 5000:5000 python-hello-world:3
 ```
