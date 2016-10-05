@@ -43,7 +43,10 @@ $ docker stop 8ce
 ```
 
 !SUB
-# Check. What have we done thus far?
+# Check
+
+**What have we done thus far?**
+- Automated build of our docker image  <!-- .element: class="fragment" -->
 
 **What can we improve?**
 
@@ -92,7 +95,7 @@ cc245603ef5c        go-hello-world-http-v2  "/bin/sh -c /go/bin/g"   3 seconds a
 ```
 
 !SUB
-# Check. What have we done thus far?
+# Check
 
 **What can we improve?**
 ```bash

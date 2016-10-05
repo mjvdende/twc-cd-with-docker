@@ -12,4 +12,7 @@ docker run -d --name=jenkins -p 8080:8080 -p 50000:50000 -v $PWD/jenkins:/var/je
 ```
 
 !SUB
-test  
+
+# Authorize Jenkins
+
+![exercise](img/sprocket.png) <!-- .element: style="width: 10%; height: auto;" class="noborder" -->   
