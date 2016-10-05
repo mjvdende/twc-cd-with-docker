@@ -132,3 +132,12 @@ docker build -t python-hello-world:3 build-dockerfile-v3
 # Run the application image
 docker run -d -p 5000:5000 python-hello-world:3
 ```
+
+!SLIDE
+<!-- .slide: data-background="#64217E" -->
+# ![exercise](img/sprocket.png) <!-- .element: style="width: 10%; height: auto;" class="noborder" --> Extra Exercise
+
+- Create a nodejs or java or anything application
+- Compose a Dockerfile for it
+- Try to create smallest docker image as possible
+- Build and Run it

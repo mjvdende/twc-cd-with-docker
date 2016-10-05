@@ -5,7 +5,9 @@
 !SUB
 ## Getting Started
 
-```
+Why not run docker **without** any **arguments?** Let's see what happens
+
+```bash
 # Show Docker help text to list all possible commands
 $ docker
 Usage: docker [OPTIONS] COMMAND [arg...]

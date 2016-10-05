@@ -31,6 +31,12 @@ Images: 1
 [github.com/xebia/twc-cd-with-docker](https://github.com/xebia/twc-cd-with-docker.git)
 
 ```bash
+# pull project files from Github
 git clone https://github.com/xebia/twc-cd-with-docker.git
+# change directory
 cd twc-cd-with-docker
 ```
+
+# Check. Everything is in working order?
+
+**Please continue** with the **next** exercise
