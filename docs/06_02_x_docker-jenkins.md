@@ -34,13 +34,6 @@ Go to **Manage Jenkins > Manage Plugins** and install plugins
 ![exercise](img/file-system.jpg) <!-- .element: style="width: 60%; height: auto;" class="noborder" -->
 
 !SUB
-# Configure Jenkins: Authorization
-
-Add **ssh-key** contents to Jenkins **Global credentials**
-
-![exercise](img/credentials-jenkins.jpg) <!-- .element: style="width: 60%; height: auto;" class="noborder" -->   
-
-!SUB
 # Configure Jenkins: Docker build node
 
 Click on **Build Executor Status** and on **new node** and give it a name. Create **docker** node
@@ -52,8 +45,7 @@ Click on **Build Executor Status** and on **new node** and give it a name. Creat
 
 Start build **node**
 ```bash
-$ wget http://localhost:8080/jnlpJars/slave.jar
-$ java -jar slave.jar -jnlpUrl http://localhost:8080/computer/docker/slave-agent.jnlp -secret [GRAB_SECRET_FROM_SCREEN]
+$ nohup java -jar scripts/slave.jar -jnlpUrl http://localhost:8080/computer/docker/slave-agent.jnlp -secret [GRAB_SECRET_FROM_SCREEN] >/dev/null 2>&1 &
 ```
 
 !SUB
@@ -67,3 +59,16 @@ On the welcome screen in Jenkins goto **create new jobs** named **deploy-product
  - Choose "add build step" type "execute shell"
  - Command: **./deploy/deploy.sh**
 - save and run
+
+!SUB
+# Check
+
+**What have we done thus far?**
+- Automatically deployed the application  <!-- .element: class="fragment" -->
+
+**What can we improve?** <!-- .element: class="fragment" -->
+- Extra: Trigger build automatically  <!-- .element: class="fragment" -->
+ - Login or signup for github or gitlab
+ - Push you code to repository
+ - Trigger the build on code changes
+ 
