@@ -10,6 +10,7 @@
 ```bash
 # Create directory where Jenkins store static files
 $ mkdir $HOME/jenkins
+
 # Start Jenkins
 $ docker run -d --name=jenkins -p 8080:8080 -p 50000:50000 -v $HOME/jenkins:/var/jenkins_home --env JAVA_OPTS="-Xmx2024m" jenkins
 ```
@@ -36,7 +37,7 @@ Go to **Manage Jenkins > Manage Plugins** and install plugins
 !SUB
 # Configure Jenkins: Docker build node
 
-Click on **Build Executor Status** and on **new node** and give it a name. Create **docker** node
+Click on **Build Executor Status** and on **new node** and give it a name
 
 ![exercise](img/new-node.jpg) <!-- .element: style="width: 60%; height: auto;" class="noborder" -->   
 
@@ -51,14 +52,17 @@ $ nohup java -jar scripts/slave.jar -jnlpUrl http://localhost:8080/computer/dock
 !SUB
 # Create build job in Jenkins
 
-On the welcome screen in Jenkins goto **create new jobs** named **deploy-production** and choose a **freestyle project**
+On the welcome screen in Jenkins goto **create new jobs**. Give the job a **cool** name and choose a **freestyle project**.
+
+Now **configure:**
 
 - Source code management
- - twc-cd-with-docker
+ - Use **File System**
+ - Path: twc-cd-with-docker
 - Build
  - Choose "add build step" type "execute shell"
  - Command: **./deploy/deploy.sh**
-- save and run
+- Save and run
 
 !SUB
 # Check
@@ -70,5 +74,5 @@ On the welcome screen in Jenkins goto **create new jobs** named **deploy-product
 - Extra: Trigger build automatically  <!-- .element: class="fragment" -->
  - Login or signup for github or gitlab
  - Push you code to repository
+ - Change and push a code change
  - Trigger the build on code changes
- 
