@@ -3,12 +3,11 @@
 # ![exercise](img/sprocket.png) <!-- .element: style="width: 10%; height: auto;" class="noborder" --> Exercise: Docker first steps
 
 !SUB
-## Getting Started
+# Getting Started
 
 Why not run docker **without** any **arguments?** Let's see what happens
 
-```bash
-# Show Docker help text to list all possible commands
+```
 $ docker
 Usage: docker [OPTIONS] COMMAND [arg...]
        docker [ --help | -v | --version ]
@@ -37,15 +36,20 @@ Commands:
 ```
 
 !SUB
-## Getting Started
+# Getting Started
+
+Show all **running** containers
+
 ```
-# Show all running containers
 $ docker ps
-CONTAINER ID        IMAGE                                     COMMAND                  CREATED             STATUS              PORTS                                              NAMES
+CONTAINER ID     IMAGE     COMMAND     CREATED     STATUS      PORTS      NAMES
 ```
 
 !SUB
-## Run a container
+# Run a container
+
+The **obligatory** hello world
+
 ```
 $ docker run hello-world
 Unable to find image 'hello-world:latest' locally
@@ -59,18 +63,32 @@ This message shows that your installation appears to be working correctly.
 ...
 ```
 
+Note: do **not** try to run Ubuntu. This will **download** 127.1 MB of docker image **layers**
+
 !SUB
 ## Run an interactive container
-```
+
+**Experiment** with a Docker **container**
+
+```bash
+# Start Docker container and start a interactive session in bash
 $ docker run -ti jenkins bash
-root@d83aa96f567a:/# whoami
+jenkins@d83aa96f567a:/# whoami
 jenkins
 
-root@d83aa96f567a:/# uname -a
-Linux 00cbdb571770 4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016 x86_64  GNU/Linux
+# Which operating system is this?
+jenkins@d83aa96f567a:/# uname -a
+Linux 00cbdb571770 4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016 x86_64 GNU/Linux
 
-root@d83aa96f567a:/# docker ps
+# Is docker installed?
+jenkins@d83aa96f567a:/# docker ps
 bash: docker: command not found
 
-root@d83aa96f567a:/# exit
+# Exit Docker container
+jenkins@d83aa96f567a:/# exit
 ```
+
+!SUB
+# Check. That wasn't so hard was it?
+
+**Ask** a trainer if you want **more** information about something

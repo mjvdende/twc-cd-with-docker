@@ -37,6 +37,7 @@ git clone https://github.com/xebia/twc-cd-with-docker.git
 cd twc-cd-with-docker
 ```
 
+!SUB
 # Check. Everything is in working order?
 
 **Please continue** with the **next** exercise

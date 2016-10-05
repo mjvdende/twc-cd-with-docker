@@ -1,7 +1,9 @@
 FROM alpine
 
-RUN apt-get update && apt-get install -y curl
+RUN apk add --no-cache curl
 
-COPY test.sh /test.sh
+ADD test.sh /test.sh
+
+RUN chmod +x /test.sh
 
 CMD /test.sh http://$SUT_PORT_80_TCP_ADDR:$SUT_PORT_80_TCP_PORT
