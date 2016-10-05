@@ -34,8 +34,19 @@ docker build -t tester tester
 
 !SUB
 # Run tests
+
+First start **system under test** and run **test**
+
 ```bash
-docker run --link python-hello-world:3 tester
+# Start SUT
+docker run -d --name hello-world -p 5000:5000 python-hello-world:3
+
+# Get ip of running container
+SUT_IP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' hello-world)
+
+# Run test
+docker run tester "$SUT_IP:5000"
+
 ```
 
 !SUB
