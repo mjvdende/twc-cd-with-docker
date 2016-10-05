@@ -24,7 +24,7 @@ $ cat $HOME/jenkins/secrets/initialAdminPassword
 680595e443024995ad6fa4d1ee5baa9a
 ```
 
-And **Install suggested plugins**
+Then **Install suggested plugins**
 
 !SUB
 # Configure Jenkins: Install extra plugin
