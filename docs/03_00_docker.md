@@ -1,10 +1,10 @@
 <!-- .slide: data-background="#64217E" -->
 <center>
-# What is Docker
+# What is Docker?
 ![Docker logo](img/docker-logo-no-text.png) <!-- .element: class="noborder" -->
 
 !SUB
-## Wha is Docker?
+## What is Docker?
 
 > Docker is the world's leading&nbsp; software containerization platform
 

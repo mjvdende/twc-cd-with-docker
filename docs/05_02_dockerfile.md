@@ -28,7 +28,7 @@ INSTRUCTION arguments
 ## FROM
 - Syntax: `FROM <image>:<tag>`
 - Sets the base image for this image
-- FROM must be the first non-comment instruction in the Dockerfile
+- FROM must be the first non-comment instruction in the dockerfile
 
 !SUB
 ## COPY

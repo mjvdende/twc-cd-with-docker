@@ -9,7 +9,7 @@ $ docker run -ti mjvdende/python
 bash-4.3#
 # Now we're inside the container!
 
-# Build the application
+# Download the application
 bash-4.3# wget --no-check-certificate https://raw.githubusercontent.com/xebia/twc-cd-with-docker/master/app/helloWorld.py
 
 # Exit the container

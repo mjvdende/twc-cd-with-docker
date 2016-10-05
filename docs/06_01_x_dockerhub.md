@@ -9,11 +9,11 @@ Create a Docker Hub account at https://hub.docker.com
 
 ```bash
 # tag docker image with docker hub username
-$ docker tag python-hello-world:3 <USERNAME>/python-hello-world:3
+$ docker tag python-hello-world:3 <DOCKER_HUB_USERNAME>/python-hello-world:3
 
 # Login at docker hub
 $ docker login
-$ docker push <DOCKER HUB USERNAME>/python-hello-world:3
+$ docker push <DOCKER_HUB_USERNAME>/python-hello-world:3
 ```
 
 !SUB
