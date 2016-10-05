@@ -22,7 +22,7 @@ ADD test.sh /test.sh
 
 RUN chmod +x /test.sh
 
-CMD /test.sh
+ENTRYPOINT ["/test.sh"]
 ```
 
 !SUB
@@ -46,11 +46,10 @@ SUT_IP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' hello-world)
 
 # Run test
 docker run tester "$SUT_IP:5000"
-
 ```
 
 !SUB
-# Test result
-The test fails :(
+# Check
 
-Make the test pass!
+**Btw: The test fails :(**
+- Make the test pass!  <!-- .element: class="fragment" -->
