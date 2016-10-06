@@ -23,6 +23,7 @@ Use a **deploy** to automatically start **python-hello-world**
 on a google cloud **vm**
 
 - Save the **ssh-key** from the email in your **project**
+- run: $ chmod 400 ssh-key
 - Add docker hub **username** and **ip** to deploy script
  - ```deploy/deploy.sh```  <!-- .element: class="code-single-line" -->
 - Run deploy script
