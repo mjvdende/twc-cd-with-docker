@@ -14,6 +14,8 @@ This is all you need to follow along with the exercises
 !SUB
 # Verify Docker installation
 
+https://xebia.github.io/twc-cd-with-docker
+
 Open a terminal
 ```bash
 ➜  ~ docker info
