@@ -48,7 +48,7 @@ $ docker stop 8ce
 **What have we done thus far?**
 - Automated build of our docker image  <!-- .element: class="fragment" -->
 
-**What can we improve?**
+**What can we improve?** <!-- .element: class="fragment" -->
 
 - Automatically start our application when we run the container <!-- .element: class="fragment" -->
 - Declare on which port our application runs <!-- .element: class="fragment" -->
@@ -98,10 +98,6 @@ cc245603ef5c        go-hello-world-http-v2  "/bin/sh -c /go/bin/g"   3 seconds a
 # Check
 
 **What can we improve?**
-```bash
-docker images | grep python-hello-world
-> python-hello-world latest d31a90b28d50 2 minutes ago 57.82 MB
-```
 
 Get rid of the build tools <!-- .element: class="fragment" --> <br />
 We don't need/want them during run-time
@@ -133,8 +129,7 @@ docker build -t python-hello-world:3 build-dockerfile-v3
 docker run -d -p 5000:5000 python-hello-world:3
 ```
 
-!SLIDE
-<!-- .slide: data-background="#64217E" -->
+!SUB
 # ![exercise](img/sprocket.png) <!-- .element: style="width: 10%; height: auto;" class="noborder" --> Extra Exercise
 
 - Create a nodejs or java or anything application

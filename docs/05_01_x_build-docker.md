@@ -103,7 +103,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 # Check
 
 **What have we done thus far?**
-- Manual build of the Docker image  <!-- .element: class="fragment" -->
+- Manually build of the Docker image  <!-- .element: class="fragment" -->
 
 **What can we improve?** <!-- .element: class="fragment" -->
 - Automate the steps to build the image  <!-- .element: class="fragment" -->
