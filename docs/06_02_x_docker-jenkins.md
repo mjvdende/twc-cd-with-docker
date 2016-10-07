@@ -39,7 +39,7 @@ Go to **Manage Jenkins > Manage Plugins** and install plugins
 
 Click on **Build Executor Status** and on **new node** and give it a name
 
-![exercise](img/new-node.jpg) <!-- .element: style="width: 60%; height: auto;" class="noborder" -->   
+![exercise](img/build-node.jpg) <!-- .element: style="width: 60%; height: auto;" class="noborder" -->   
 
 !SUB
 # Configure Jenkins: Start build node
