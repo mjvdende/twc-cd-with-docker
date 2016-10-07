@@ -12,7 +12,7 @@
 $ mkdir $HOME/jenkins
 
 # Start Jenkins
-$ docker run -d --name=jenkins -p 8080:8080 -p 50000:50000 -v $HOME/jenkins:/var/jenkins_home --env JAVA_OPTS="-Xmx2024m" jenkins
+$ docker run -d --name=jenkins -p 8080:8080 -p 50000:50000 -v $HOME/jenkins:/var/jenkins_home -v $HOME/twc-cd-with-docker:/twc-cd-with-docker --env JAVA_OPTS="-Xmx2024m" jenkins
 ```
 
 !SUB
