@@ -8,8 +8,7 @@
 
 **Remember** the pipeline? Change, Build, Deploy, Test, Deploy. Complete the pipeline
 
-- Hints
- - Jenkins job dsl <!-- .element: class="fragment" -->
+- Hints <!-- .element: class="fragment" -->
+ - Jenkins job dsl
  - Jenkins pipeline
  - Gitlab CI
- 
