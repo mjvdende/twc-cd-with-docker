@@ -41,7 +41,7 @@ Click on **Build Executor Status** and then on **new node** and add a build node
 
 ![exercise](img/build-node.png) <!-- .element: style="width: 50%; height: auto;" class="noborder" -->   
 
-Copy paste the **secret** from the screen after you hit save. You need it in the next slide.
+Goto docker build node  and copy **secret**. You need it in the next slide.
 
 !SUB
 # Configure Jenkins: Start build node
@@ -59,14 +59,14 @@ On the welcome screen in Jenkins goto **create new jobs**. Give the job a **name
 Now **configure:**
 
 - Restrict where this project can be run
- - build node: **docker**
+ - label expression: **docker**
 - Source code management
  - Use **File System**
- - Path: twc-cd-with-docker
+ - Path: /< DIRECTORY_TO_REPOSITORY_FILES >/twc-cd-with-docker
 - Build
  - Choose "add build step" type "execute shell"
  - Command: **./deploy/deploy.sh**
-- Save and run
+- Save and build
 
 !SUB
 # Check

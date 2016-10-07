@@ -32,7 +32,7 @@ Images: 1
 !SUB
 # Get the workshop files
 
-[github.com/xebia/twc-cd-with-docker](https://github.com/xebia/twc-cd-with-docker.git)
+Clone repository [github.com/xebia/twc-cd-with-docker](https://github.com/xebia/twc-cd-with-docker.git)
 
 ```bash
 # pull project files from Github
