@@ -20,7 +20,7 @@ The **slides** can be viewed online at https://xebia.github.io/twc-cd-with-docke
 Open a **terminal**
 
 ```bash
-➜  ~ docker info
+$ docker info
 Containers: 0
  Running: 0
  Paused: 0
@@ -36,9 +36,9 @@ Images: 1
 
 ```bash
 # pull project files from Github
-git clone https://github.com/xebia/twc-cd-with-docker.git
+$ git clone https://github.com/xebia/twc-cd-with-docker.git
 # change directory
-cd twc-cd-with-docker
+$ cd twc-cd-with-docker
 ```
 
 !SUB

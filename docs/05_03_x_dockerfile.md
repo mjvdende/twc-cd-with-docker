@@ -114,8 +114,10 @@ RUN apk add --no-cache python py-pip \
  && pip install flask \
  && rm -rf /var/cache/apk/*
 
-COPY helloWorld.py
+ADD helloWorld.py /helloWorld.pys
+
 ENV FLASK_APP helloWorld.py
+
 CMD ["flask", "run", "--host=0.0.0.0"]
 
 EXPOSE 5000
@@ -123,10 +125,10 @@ EXPOSE 5000
 
 ```bash
 # Build the application image
-docker build -t python-hello-world:3 build-dockerfile-v3
+$ docker build -t python-hello-world:3 build-dockerfile-v3
 
 # Run the application image
-docker run -d -p 5000:5000 python-hello-world:3
+$ docker run -d -p 5000:5000 python-hello-world:3
 ```
 
 !SUB

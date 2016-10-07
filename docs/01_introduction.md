@@ -6,6 +6,7 @@
 with <!-- .element: style="color:white" -->
 
 **Maarten van den Ende** <!-- .element: style="color:white" --> <br />
+**mvandenende@xebia.com** <!-- .element: style="color:white" --> 
 
 ![Docker logo](img/xebia.svg) <!-- .element: class="noborder" style="width: 70%; height: auto;"-->
 
