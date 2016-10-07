@@ -67,7 +67,7 @@ EOF
 # Check
 
 **What have we done thus far?**
-- Manual deployed the application  <!-- .element: class="fragment" -->
+- Manually deployed the application  <!-- .element: class="fragment" -->
 
 **What can we improve?** <!-- .element: class="fragment" -->
 - Automate the steps to build the Docker image  <!-- .element: class="fragment" -->
