@@ -54,9 +54,7 @@ $ nohup java -jar scripts/slave.jar -secret [BUILD_NODE_SECRET] -jnlpUrl http://
 !SUB
 # Create build job in Jenkins
 
-On the welcome screen in Jenkins goto **create new jobs**. Give the job a **name** and choose a **freestyle project**.
-
-Now **configure:**
+On the welcome screen in Jenkins goto **create new jobs**. Give the job a **name** and choose a **freestyle project**. Now **configure:**
 
 - Restrict where this project can be run
  - label expression: **docker**
