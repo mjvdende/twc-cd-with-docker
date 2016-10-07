@@ -69,6 +69,9 @@ This message shows that your installation appears to be working correctly.
 **Experiment** with a Docker **container**
 
 ```bash
+# Pull in Jenkins Docker images from the Docker Hub
+$ docker pull jenkins
+
 # Start Docker container and start a interactive session in bash
 $ docker run -ti jenkins bash
 jenkins@d83aa96f567a:/# whoami

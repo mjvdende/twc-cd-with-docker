@@ -5,7 +5,7 @@
 !SUB
 # Required software
 
-The following software is needed
+The following software is needed (Windows users can use **git bash**)
 
 - [Docker](https://www.docker.com/)
 - [Git](https://git-scm.com/)
