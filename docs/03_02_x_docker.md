@@ -63,8 +63,6 @@ This message shows that your installation appears to be working correctly.
 ...
 ```
 
-Note: do **not** try to run Ubuntu. This will **download** 127.1 MB of docker image **layers**
-
 !SUB
 ## Run an interactive container
 

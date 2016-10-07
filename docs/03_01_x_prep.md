@@ -5,18 +5,20 @@
 !SUB
 # Required software
 
-The following software is installed on the VM for you
+The following software is needed
+
 - [Docker](https://www.docker.com/)
 - [Git](https://git-scm.com/)
 
-This is all you need to follow along with the exercises
+This is all you need to **follow** along with the **exercises**
+
+The **slides** can be viewed online at https://xebia.github.io/twc-cd-with-docker
 
 !SUB
 # Verify Docker installation
 
-https://xebia.github.io/twc-cd-with-docker
+Open a **terminal**
 
-Open a terminal
 ```bash
 ➜  ~ docker info
 Containers: 0

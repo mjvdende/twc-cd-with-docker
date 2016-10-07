@@ -7,7 +7,7 @@ with <!-- .element: style="color:white" -->
 
 **Maarten van den Ende** <!-- .element: style="color:white" --> <br />
 
-![Docker logo](img/twc.jpg) <!-- .element: class="noborder" -->
+![Docker logo](img/xebia.svg) <!-- .element: class="noborder" style="width: 70%; height: auto;"-->
 
 
 !SUB
