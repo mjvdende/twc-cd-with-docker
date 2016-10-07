@@ -18,7 +18,7 @@ $ docker run -d --name=jenkins -p 8080:8080 -p 50000:50000 -v $HOME/jenkins:/var
 !SUB
 # Configure Jenkins: Welcome
 
-Grab **initial admin password** and authenticate with Jenkins
+Grab **initial admin password** and open url **http://localhost:8080** and authenticate with Jenkins
 
 ```bash
 $ cat $HOME/jenkins/secrets/initialAdminPassword
