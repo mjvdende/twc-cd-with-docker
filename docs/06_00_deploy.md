@@ -4,7 +4,6 @@
 
 ![cd - deploy](img/deploy-continuous-deployment-pipeline.png) <!-- .element: class="noborder" -->
 
-
 !SUB
 # Deployment workflow
 - Store the build artifact in an artifact store <!-- .element: class="fragment" -->

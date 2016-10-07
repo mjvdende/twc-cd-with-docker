@@ -18,7 +18,6 @@ _[docker.com](https://www.docker.com)_
 - Simple DSL to describe how to build images
 - Artifact store to share images
 
-
 !NOTE
 You get all the goodies of virtual machine per appliance, but without the cost.
 
@@ -39,7 +38,6 @@ And it is fast!
 # Why? It Supports True DevOps!
 <br />
 <center><div style="width: 75%; height: auto;"><img src="img/true-devops.jpg"/></div></center>
-
 
 !SUB
 # Separation of Concerns

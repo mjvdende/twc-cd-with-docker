@@ -12,7 +12,6 @@
 </p>
 </center>
 
-
 !SUB
 ## Multiple rootfs
 <center>
@@ -21,7 +20,6 @@
 <img src="img/docker-filesystems-multiroot.png" style="width: 50%; height: 50%;" />
 </p>
 </center>
-
 
 !SUB
 ## Docker Image
@@ -32,7 +30,6 @@
 </p>
 </center>
 
-
 !SUB
 ## Stacking images
 <center>
@@ -41,7 +38,6 @@
 <img src="img/docker-filesystems-multilayer.png" style="width: 50%; height: 50%;" />
 </p>
 </center>
-
 
 !SUB
 ## Writable containers

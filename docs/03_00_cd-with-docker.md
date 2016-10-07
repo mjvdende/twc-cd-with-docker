@@ -5,7 +5,6 @@
 
 # a good fit for Continuous Delivery?
 
-
 !SUB
 ## Faster
 - Slow one-time events happen only once on _image_ creation, not on _instance_ creation
