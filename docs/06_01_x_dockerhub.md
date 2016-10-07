@@ -41,7 +41,7 @@ $ ./deploy/deploy.sh
 docker build -t $DOCKER_HUB_USERNAME/python-hello-world build-dockerfile-v3
 docker push $DOCKER_HUB_USERNAME/python-hello-world
 
-# login to google cloud VM
+# login to google cloud VM (NOTE: Remove from script when deploying locally)
 ssh -i ssh-key core@$DOCKER_VM_IP << EOF
 
 # pull latest image
@@ -57,6 +57,8 @@ docker tag $DOCKER_HUB_USERNAME/python-hello-world:latest $DOCKER_HUB_USERNAME/p
 
 # start the web app
 docker run -d --restart always --name web-app -p 80:5000 $DOCKER_HUB_USERNAME/python-hello-world:current
+
+# (NOTE: Remove from script when deploying locally)
 EOF
 ```
 
