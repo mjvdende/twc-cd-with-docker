@@ -37,9 +37,9 @@ Go to **Manage Jenkins > Manage Plugins** and install plugins
 !SUB
 # Configure Jenkins: Docker build node
 
-Click on **Build Executor Status** and then on **new node** and git name the build node **docker**
+Click on **Build Executor Status** and then on **new node** and add a build node **docker**
 
-![exercise](img/build-node.png) <!-- .element: style="width: 5  0%; height: auto;" class="noborder" -->   
+![exercise](img/build-node.png) <!-- .element: style="width: 50%; height: auto;" class="noborder" -->   
 
 Copy paste the **secret** from the screen after you hit save. You need it in the next slide.
 
@@ -48,7 +48,7 @@ Copy paste the **secret** from the screen after you hit save. You need it in the
 
 Start build **node**
 ```bash
-$ nohup java -jar scripts/slave.jar -jnlpUrl http://localhost:8080/computer/docker/slave-agent.jnlp -secret [GRAB_SECRET_FROM_SCREEN] >/dev/null 2>&1 &
+$ nohup java -jar scripts/slave.jar -secret [BUILD_NODE_SECRET] -jnlpUrl http://localhost:8080/computer/docker/slave-agent.jnlp >/dev/null 2>&1 &
 ```
 
 !SUB
@@ -59,7 +59,7 @@ On the welcome screen in Jenkins goto **create new jobs**. Give the job a **name
 Now **configure:**
 
 - Restrict where this project can be run
- - <NODE_NAME>
+ - build node: **docker**
 - Source code management
  - Use **File System**
  - Path: twc-cd-with-docker
