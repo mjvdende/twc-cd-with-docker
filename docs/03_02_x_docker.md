@@ -88,5 +88,3 @@ jenkins@d83aa96f567a:/# exit
 
 !SUB
 # Check. That wasn't so hard was it?
-
-**Ask** a trainer if you want **more** information about something
