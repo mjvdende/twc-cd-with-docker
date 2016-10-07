@@ -39,13 +39,13 @@ First start **system under test** and run **test**
 
 ```bash
 # Start SUT
-docker run -d --name hello-world -p 5000:5000 python-hello-world:3
+docker run -d --name hello-world -p 8888:5000 python-hello-world:3
 
 # Get ip of running container
 SUT_IP=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' hello-world)
 
 # Run test
-docker run tester "$SUT_IP:5000"
+docker run tester "$SUT_IP:8888"
 ```
 
 !SUB
