@@ -52,7 +52,7 @@ $ nohup java -jar scripts/slave.jar -jnlpUrl http://localhost:8080/computer/dock
 !SUB
 # Create build job in Jenkins
 
-On the welcome screen in Jenkins goto **create new jobs**. Give the job a **cool** name and choose a **freestyle project**.
+On the welcome screen in Jenkins goto **create new jobs**. Give the job a **name** and choose a **freestyle project**.
 
 Now **configure:**
 
