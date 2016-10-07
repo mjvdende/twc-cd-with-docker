@@ -20,7 +20,7 @@ $ docker push <DOCKER_HUB_USERNAME>/python-hello-world:3
 # Deploy application to cloud VM
 
 Use a **deploy** to automatically start **python-hello-world**
-on a google cloud **vm**
+on a google cloud **vm** (or locally)
 
 - Save the **ssh-key** from the email in your **project**
 - run: $ chmod 400 ssh-key
