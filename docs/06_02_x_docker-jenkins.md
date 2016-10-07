@@ -57,7 +57,7 @@ On the welcome screen in Jenkins goto **create new jobs**. Give the job a **cool
 Now **configure:**
 
 - Restrict where this project can be run
- - [node name]
+ - [NODE_NAME]
 - Source code management
  - Use **File System**
  - Path: twc-cd-with-docker
