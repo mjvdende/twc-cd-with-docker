@@ -37,9 +37,11 @@ Go to **Manage Jenkins > Manage Plugins** and install plugins
 !SUB
 # Configure Jenkins: Docker build node
 
-Click on **Build Executor Status** and on **new node** and give it a name
+Click on **Build Executor Status** and then on **new node** and git name the build node **docker**
 
-![exercise](img/build-node.jpg) <!-- .element: style="width: 60%; height: auto;" class="noborder" -->   
+![exercise](img/build-node.png) <!-- .element: style="width: 5  0%; height: auto;" class="noborder" -->   
+
+Copy paste the **secret** from the screen after you hit save. You need it in the next slide.
 
 !SUB
 # Configure Jenkins: Start build node
@@ -57,7 +59,7 @@ On the welcome screen in Jenkins goto **create new jobs**. Give the job a **name
 Now **configure:**
 
 - Restrict where this project can be run
- - [NODE_NAME]
+ - <NODE_NAME>
 - Source code management
  - Use **File System**
  - Path: twc-cd-with-docker
