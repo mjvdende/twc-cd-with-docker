@@ -51,5 +51,9 @@ docker run tester "$SUT_IP:5000"
 !SUB
 # Check
 
-**Btw: The test fails :(**
+**What have we done thus far?**
+- The test fails :(** <!-- .element: class="fragment" -->
 - Make the test pass!  <!-- .element: class="fragment" -->
+
+**What can we improve?** <!-- .element: class="fragment" -->
+- Extra: Add test step in deploy job  <!-- .element: class="fragment" -->
