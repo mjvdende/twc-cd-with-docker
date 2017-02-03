@@ -11,6 +11,6 @@ cd docs && docker run -ti -d \
 nginx
 ```
 
-Then goto http://localhost:8989
+Then goto [http://localhost:8989](http://localhost:8989)
 
 Have fun!
