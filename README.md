@@ -2,7 +2,7 @@
 
 See http://xebia.github.io/twc-cd-with-docker/ for the slides
 
-## Run pesentation locally 
+### Run Pesentation locally 
 
 ```
 cd docs && docker run -ti -d \
@@ -10,3 +10,7 @@ cd docs && docker run -ti -d \
 -v $(pwd):/usr/share/nginx/html:ro \
 nginx
 ```
+
+Then goto http://localhost:8989
+
+Have fun!
