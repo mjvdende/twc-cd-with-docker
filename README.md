@@ -1,6 +1,6 @@
 # Workshop Continuous Delivery with Docker
 
-See http://mjvdende.github.io/twc-cd-with-docker/ for the slides
+See http://mjvdende.github.io/twc-cd-with-docker/ for the slides.
 
 ### Run Pesentation locally 
 
